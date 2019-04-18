@@ -58,9 +58,18 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
+/*
     var sum = _.range(0,1000,3).reduce(function(sum, x) { return sum + x }) + 
               _.range(0,1000,5).reduce(function(sum, x) { return sum + x }) - 
-              _.range(0,1000,15).reduce(function(sum, x) { return sum + x }); /* try chaining range() and reduce() */
+              _.range(0,1000,15).reduce(function(sum, x) { return sum + x }); 
+              /* try chaining range() and reduce() */
+    var sum = _.range(0,1000).reduce(function(sum, curr){
+      if(curr % 3 === 0 || curr % 5 === 0){
+        sum += curr;
+      }
+      return sum;
+    })
+
 
     expect(233168).toBe(sum);
   });
